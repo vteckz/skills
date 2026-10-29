@@ -1,84 +1,42 @@
-# Linton Evans - 3D Interactive CV Portfolio
+# Linton Evans | My Digital Skillset
 
-An impressive, interactive 3D CV website featuring:
-- Animated 3D box that "unpacks" to reveal the portfolio
-- 3D avatar with gestures and animations
-- Text-to-speech narration of experience
-- High-resolution WebGL graphics
-- Autonomous navigation through CV sections
+An interactive 3D map of my skills. Every skill links back to the role or project where I used it.
 
-## Quick Start
+## What's on the page
 
-### Option 1: Using Node.js (Recommended)
+- A short boot sequence, then the constellation builds itself out of a particle swarm
+- 8 domains and 73 skills you can orbit, zoom and click
+- Pick a skill to see where I've used it, the skills it connects to and any certifications
+- Pick a project or a role to light up every skill that went into it
+- Search with `/` or Cmd K, a grid view, and a career timeline you can play from my first IT role through to 2026
+- Return visits skip the intro. Replay intro brings it back.
 
-```bash
-# Install Node.js first (if not installed)
-# macOS: brew install node
-# or download from https://nodejs.org
+## Running it locally
 
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open http://localhost:3000 in your browser.
-
-### Option 2: Using Python (No Node.js required)
+It's one page with no build step. Three.js loads from a CDN.
 
 ```bash
-# Navigate to the project folder
 cd ~/Dev/3d-cv-portfolio
-
-# Start a simple HTTP server with Python 3
-python3 -m http.server 3000
+python3 -m http.server 3000 --bind 127.0.0.1
 ```
 
-Then open http://localhost:3000/standalone.html
+Then open http://127.0.0.1:3000 and add `?skip` to the address to jump past the intro.
 
-## Building for Production
+## Updating the skills
 
-```bash
-npm run build
-```
+Everything sits in the data section at the top of the script in `index.html`: `ROLES`, `PROJECTS`, `CERTS`, `DOMAINS` and `STAGES`.
 
-The built files will be in the `dist` folder, ready to deploy.
+Each skill lists its evidence. `role:n` is line n of that role, `p:id` is a project and `cert:id` is a certification. Connections between skills come from shared evidence, so there's nothing else to keep up to date.
 
-## Features
+`standalone.html` is a copy of `index.html`. Keep the two the same.
 
-- **3D Box Animation**: Click "Open My CV" to unpack the gift box
-- **Avatar Narration**: The avatar will speak and gesture through your CV
-- **Keyboard Controls**:
-  - `Space` or `→` - Skip to next section
-  - `←` - Go to previous section
-  - `M` - Toggle audio mute
-- **Navigation**: Use the dots at the bottom to jump to any section
+The `src` folder, `vite.config.js` and `package.json` belong to an older version of the site. The page doesn't use them.
 
-## Tech Stack
+## Hosting
 
-- Three.js - 3D rendering
-- GSAP - Professional animations
-- Web Speech API - Text-to-speech
-- Vite - Development & build tool
+GitHub Pages serves `main` at https://vteckz.github.io/skills/
 
-## Customization
-
-Edit `src/data/cv-data.js` to update your CV content, including:
-- Personal information
-- Work experience
-- Skills
-- Education
-- Certifications
-- Speech scripts for narration
-
-## Deployment
-
-The built site can be deployed to:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting
+`og-image.jpg` is the link preview image.
 
 ---
-Built with Three.js | Designed for Linton Evans
+Built with Three.js
