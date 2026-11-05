@@ -16,7 +16,7 @@ export const cvData = {
     email: "linton.evans@outlook.com",
     phone: "+64-21-939-505",
     location: "Auckland, New Zealand",
-    linkedin: "linkedin.com/in/lintonevans",
+    linkedin: "linkedin.com/in/linton-evans-77283782",
     noticePeriod: "1-2 Weeks Negotiable"
   },
 
